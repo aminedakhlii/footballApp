@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'dart:ui';
+import 'favorites.dart';
 
 class NavDrawer extends StatelessWidget {
 
@@ -20,13 +21,13 @@ class NavDrawer extends StatelessWidget {
                 color: Colors.green,
                 image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/wallpaper.jpg'))
+                    image: AssetImage('assets/darkwallpaper.jpg'))
             ),
 
 
             child: ClipRRect(
               child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
                 child: Container(
                   alignment: Alignment.center,
                   color: Colors.grey.withOpacity(0.0),
@@ -43,8 +44,8 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.verified_user),
-            title: Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            title: Text('فرقي المفضلة'),
+            onTap: () => {Navigator.of(context).push(MaterialPageRoute(builder: (context) => Favorites()))},
           ),
           ListTile(
             leading: Icon(Icons.settings),

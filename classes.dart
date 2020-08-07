@@ -1,9 +1,9 @@
 
 class Match {
 
-  Match({this.fixtureId , this.homeTeam , this.awayTeam , this.leagueName , this.goalsHome , this.goalsAway});
+  Match({this.fixtureId , this.league_id , this.homeTeam , this.awayTeam , this.leagueName , this.goalsHome , this.goalsAway });
 
-  int fixtureId , status ;
+  int fixtureId , league_id ;
 
   Team homeTeam ;
   Team awayTeam ;
@@ -23,12 +23,34 @@ class Match {
 }
 
 
+class League {
+  int id ;
+  String name , type , country , logoUrl ;
+  int season ;
+
+  League({this.id, this.name, this.type, this.country, this.logoUrl,
+      this.season});
+}
+
+class Standings {
+  int rank ;
+  Team team ;
+  String description ;
+
+  Standings({this.rank, this.team, this.description});
+
+}
+
+
+
 class Team {
 
   Team(name , logo) {
     this.name = name ;
     this.logo = logo ;
   }
+
+  int id ;
   String logo ;
   String name ;
 
@@ -51,4 +73,13 @@ class Event {
 
   Event({this.type , this.time , this.mainPlayer , this.secPlayer , this.home}) ;
 
+}
+
+
+class statObject {
+  String name ;
+  var home ;
+  var away ;
+
+  statObject({this.name , this.home, this.away});
 }
